@@ -1,0 +1,410 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+
+
+:root {
+  font-size: 15px;
+}
+
+body {
+ box-sizing: border-box; 
+ margin: 0;
+}
+
+.active {
+  display: none;
+}
+
+.main-body {
+  width: calc(100% - 10%);
+  margin: 0 auto;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgb(206, 8, 206), rgb(0, 80, 252)); 
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+/*=========================
+Header
+==========================*/
+
+.main-header {
+  background-image: url("images/mobile/image-hero.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  max-width: 100%;
+  height: 67rem;
+  color: white;
+  margin-bottom: 10em;
+}
+
+.header-image {
+  width: 100%;
+  height: inherit;
+}
+
+.main-menu {
+  display: none;
+}
+
+.header-top {
+  position: absolute;
+  inset: 0;
+  margin: 0 auto;
+  width: calc(100% - 10%);
+  height: 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.page-title {
+  margin-top: 0;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  font-family: 'Alata', sans-serif;
+}
+
+.hamburger-menu {
+  margin: 0;
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.1rem
+}
+
+.header-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 35%;
+  padding: 0.5em 1em;
+  color: white;
+  border: 3px solid white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.header-title h1 {
+  width: calc(100% - 20%);
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: normal;
+}
+
+.modal {
+  position: absolute;
+  width: 100%;
+  height: 67rem;
+  background-color: black;
+  z-index: 1;
+  animation: menuVisibility 2s;
+}
+
+.menu-dropdown {
+  position: absolute;
+  margin-left: 5%;
+  top: 25%;
+  font-size: 2em;
+}
+
+.menu-dropdown a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  text-transform: uppercase;
+  margin-top: 1.5em;
+}
+
+.menu-dropdown a:hover {
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+}
+
+@keyframes menuVisibility {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+
+/*==============================
+Main body
+================================*/
+
+/*
+First section with 1 pic
+*/
+
+.main-descr {
+  width: 100%;
+  margin-bottom: 10em;
+}
+
+.descr-pic-container {
+  width: 100%;
+  height: 20em;
+  background-image: url("images/mobile/image-interactive.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.descr-container {
+  margin: 0 auto;
+  text-align: center;
+  width: calc(100% - 10%);
+}
+
+.descr-title {
+  text-transform: uppercase;
+  font-size: 3em;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-bottom: 0;
+}
+
+.descr {
+  color: hsl(0, 0%, 55%);
+  font-family: 'Alata', sans-serif;
+  font-size: 1.3em;
+}
+
+/*
+Grid section with many pics
+*/
+
+.main-grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  place-items: center;
+  gap: 3em;
+}
+
+.main-grid-title p {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 3em;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  order: 1
+}
+
+.picture-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+  cursor: pointer;
+  order: 2
+}
+
+.filter {
+  position: relative;
+  width: 100%;
+  height: 10rem;  
+  isolation: isolate;
+}
+
+.filter p {
+  position: absolute;
+  top: 35%;
+  left: 5%;
+  color: white;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+  width: 6em;
+  z-index: 1;
+  transition: 0.5s;
+}
+
+.filter::after {
+  content: '';
+  transition: 0.5s;
+}
+
+.filter:hover:after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.377);
+  z-index: -1;
+}
+
+.filter:hover p {
+  color: black;
+}
+
+.btn-grid {
+  order: 3;
+  margin-bottom: 5rem;
+}
+
+.btn-grid .btn {
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  font-size: 1em;
+  border: 1px solid black;
+  background-color: white;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  word-spacing: 0.2rem;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
+
+
+@media screen and (min-width: 1400px) {
+  .main-header {
+    background-image: url("images/desktop/image-hero.jpg");
+  }
+
+  .header-top {
+    width: calc(100% - 30%);
+  }
+
+  .header-title {
+    margin-left: 10%;
+  }
+
+  .descr-container {
+    position: absolute;
+    width: 45%;
+    bottom: 0;
+    left: 70%;
+    transform: translate(-50%);
+    background-color: white;
+    max-height: 20rem;
+    min-width: 35em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .descr-title,
+  .descr {
+    width: calc(100% - 30%);
+    text-align: start;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .picture-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2.5em;
+    height: auto;
+    order: 3;
+    margin-bottom: 200px;
+  }
+
+  .filter p {
+    top: 70%;
+  }
+}
+
+@media screen and (min-width: 781px) and (max-width: 1399px) {
+  .main-body {
+    width: calc(100% - 10%);
+  }
+  .descr-pic-container {
+    margin: 0 auto;
+  }
+
+  .picture-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2.5em;
+    height: auto;
+    order: 3;
+    margin-bottom: 200px;
+  }
+
+  .filter p {
+    top: 65%;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .main-body {
+    width: calc(100% - 30%);
+  }
+  .header-title {
+    max-width: 50em;
+    left: 480px;
+  }
+
+  .header-title h1 {
+    font-size: 5rem;
+    padding: 0 0.5em;
+  }
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  .main-menu {
+    display: flex;
+    gap: 2rem;
+    margin-top: 10px;
+  }
+
+  .main-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Alata', sans-serif;
+  }
+
+  .main-descr {
+    position: relative;
+  }
+
+  .main-menu a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.6em;
+  }
+
+  .descr-pic-container {
+    background-image: url("images/desktop/image-interactive.jpg");
+    background-size: cover;
+    width: 60%;
+    height: 30rem;
+    min-width: 30rem;
+  }
+
+  .main-grid-container {
+    place-items: start;
+    position: relative
+  }
+
+  .btn-grid {
+    position: absolute;
+    top: 3em;
+    right: 0;
+  }
+}
